@@ -8,7 +8,10 @@ which has been modified to demonstrate BAD architectural practises, which make t
 This project is designed to be refactored and cleaned up to enable unit testing, as part of a code
 lab.
 
-Android app that leverages the [OpenLibrary API](https://openlibrary.org/developers/api) to search books and display cover images. It also allows you to recommend books to friends.
+
+** The app **
+
+This is an Android app which leverages the [OpenLibrary API](https://openlibrary.org/developers/api) to search books and display cover images. It also allows you to recommend books to friends.
 
 The app is composed of two screens. The first screen displays a list of books, in which, each book is described by its title, author and cover photo. After a user selects a book from the list, a second screen appears displaying additional details about the book, including the publisher and no. of pages.
 
