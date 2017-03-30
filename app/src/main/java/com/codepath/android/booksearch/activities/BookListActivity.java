@@ -17,7 +17,6 @@ import com.codepath.android.booksearch.Constants;
 import com.codepath.android.booksearch.R;
 import com.codepath.android.booksearch.adapters.BookAdapter;
 import com.codepath.android.booksearch.models.Book;
-import com.codepath.android.booksearch.net.BookClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -35,7 +34,6 @@ public class BookListActivity extends ActionBarActivity {
     public static final String BOOK_DETAIL_KEY = "book";
     private ListView lvBooks;
     private BookAdapter bookAdapter;
-    private BookClient client;
     private ProgressBar progress;
 
     @Override

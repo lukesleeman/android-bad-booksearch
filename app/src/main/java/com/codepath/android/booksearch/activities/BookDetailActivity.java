@@ -14,9 +14,11 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.codepath.android.booksearch.Constants;
 import com.codepath.android.booksearch.R;
 import com.codepath.android.booksearch.models.Book;
-import com.codepath.android.booksearch.net.BookClient;
+
+import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
@@ -29,13 +31,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+
 public class BookDetailActivity extends ActionBarActivity {
     private ImageView ivBookCover;
     private TextView tvTitle;
     private TextView tvAuthor;
     private TextView tvPublisher;
     private TextView tvPageCount;
-    private BookClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +63,12 @@ public class BookDetailActivity extends ActionBarActivity {
         tvTitle.setText(book.getTitle());
         tvAuthor.setText(book.getAuthor());
         // fetch extra book data from books API
-        client = new BookClient();
-        client.getExtraBookDetails(book.getOpenLibraryId(), new JsonHttpResponseHandler() {
+
+        // Method for accessing books API to get publisher and no. of pages in a book.
+        String url = Constants.API_BASE_URL + "books/";
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url + book.getOpenLibraryId() + ".json", new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
@@ -84,6 +90,7 @@ public class BookDetailActivity extends ActionBarActivity {
                 }
             }
         });
+
     }
 
 
