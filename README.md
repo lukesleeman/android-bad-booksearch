@@ -9,7 +9,7 @@ This project is designed to be refactored and cleaned up to enable unit testing,
 lab.
 
 
-** The app **
+**The app**
 
 This is an Android app which leverages the [OpenLibrary API](https://openlibrary.org/developers/api) to search books and display cover images. It also allows you to recommend books to friends.
 
