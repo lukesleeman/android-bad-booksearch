@@ -1,13 +1,8 @@
 package com.codepath.android.booksearch.models;
 
-import android.text.TextUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
 
 public class Book implements Serializable {
     private String openLibraryId;
